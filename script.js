@@ -1,6 +1,5 @@
-// const { fetchProducts } = require("./helpers/fetchProducts");
-
 const itemsList = document.querySelector('.items');
+const itemsCard = document.querySelector('cart__items');
 
 function createProductImageElement(imageSource) {
   const img = document.createElement('img');

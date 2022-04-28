@@ -11,7 +11,7 @@ const fetchProducts = async (search) => {
   }
 };
   
-// console.log(fetchProducts('computador'));
+console.log(fetchProducts('computador'));
 
 if (typeof module !== 'undefined') {
   module.exports = {
