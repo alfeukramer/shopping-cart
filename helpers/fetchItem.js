@@ -1,13 +1,8 @@
-const fetchItem = async (addCard) => {
+const fetchItem = async (id) => {
   try {
-    if (addCard) {
-  const itemFetch = await fetch(`https://api.mercadolibre.com/items/${addCard}`);
+    if (id) {
+  const itemFetch = await fetch(`https://api.mercadolibre.com/items/${id}`);
   const returnItem = await itemFetch.json();
-  // const destructuringObj = {
-  //   sku: returnItem.id,
-  //   name: returnItem.title,
-  //   price: returnItem.price,
-  // };
   return returnItem;
 }
 throw new Error('You must provide an url');

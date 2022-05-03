@@ -1,5 +1,6 @@
+// const { fetchItem } = require("./helpers/fetchItem");
+
 const itemsList = document.querySelector('.items');
-const itemsCard = document.querySelector('cart__items');
 
 function createProductImageElement(imageSource) {
   const img = document.createElement('img');
@@ -25,20 +26,21 @@ function createProductItemElement({ sku, name, image }) {
   section.appendChild(createCustomElement('button', 'item__add', 'Adicionar ao carrinho!'));
 
   return section;
-}
+  }
+  
 async function addSearch() {
   const searchResult = await fetchProducts('computador');
   const product = searchResult.results;
   product.filter((computer) => {
-  const objectDestructuring = {
-  sku: computer.id,
-  name: computer.title,
-  image: computer.thumbnail,
-  };
-  const add = itemsList.appendChild(createProductItemElement(objectDestructuring));
-  return add;
+    const objectDestructuring = {
+      sku: computer.id,
+      name: computer.title,
+      image: computer.thumbnail,
+    };
+    const add = itemsList.appendChild(createProductItemElement(objectDestructuring));
+    return add;
   });
-  }
+}
 
 function getSkuFromProductItem(item) {
   return item.querySelector('span.item__sku').innerText;
@@ -48,7 +50,7 @@ function cartItemClickListener(event) {
   // coloque seu código aqui
 }
 
-function createCartItemElement({ sku, name, salePrice }) {
+function createCartItemElement({ id: sku, title: name, price: salePrice }) {
   const li = document.createElement('li');
   li.className = 'cart__item';
   li.innerText = `SKU: ${sku} | NAME: ${name} | PRICE: $${salePrice}`;
@@ -56,4 +58,20 @@ function createCartItemElement({ sku, name, salePrice }) {
   return li;
 }
 
-window.onload = () => { addSearch(); };
+const moveCart = async () => {
+  const itemsCart = document.getElementsByClassName('cart__items')[0];
+  const btn = document.querySelectorAll('.item__add');
+    
+  btn.forEach((product) => {
+    product.addEventListener('click', async (event) => {
+      const getSku = getSkuFromProductItem(event.target.parentNode);
+      const fetchSku = await fetchItem(getSku);
+      itemsCart.appendChild(createCartItemElement(fetchSku));
+      });
+  });  
+};
+
+window.onload = async () => { 
+  await addSearch();
+  await moveCart(); 
+};
