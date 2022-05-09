@@ -82,5 +82,5 @@ emptyBtn.addEventListener('click', emptyItems);
 
 window.onload = async () => { 
   await addSearch();
-  await moveCart(); 
+  await moveCart();
 };

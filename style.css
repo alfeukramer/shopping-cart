@@ -133,11 +133,20 @@ body {
   flex-flow: column wrap;
   background-color: rgb(241, 241, 238);
   height: 100vh;
+  
+}
+.cart__item {
+  padding: 15px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: larger;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .cart .cart__items {
   height: 500px;
   overflow-y: scroll;
+  
 }
 
 .empty-cart {
