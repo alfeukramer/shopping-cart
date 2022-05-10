@@ -2,6 +2,11 @@
 
 const itemsList = document.querySelector('.items');
 
+const loading = () => {
+  const request = document.querySelector('.loading');
+  request.remove();
+};
+
 function createProductImageElement(imageSource) {
   const img = document.createElement('img');
   img.className = 'item__image';
@@ -40,6 +45,7 @@ async function addSearch() {
     const add = itemsList.appendChild(createProductItemElement(objectDestructuring));
     return add;
   });
+  loading();
 }
 
 function getSkuFromProductItem(item) {

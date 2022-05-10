@@ -154,3 +154,9 @@ body {
   border: 2px solid rgb(5, 52, 219);
   background-color: rgb(249, 249, 246);
 }
+
+.loading {
+  font-size: larger;
+  color: red;
+  padding: 20px;
+}
