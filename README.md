@@ -1,16 +1,5 @@
 # 🚧 README em construção 🚧
 
-<!-- Olá, Tryber!
+<h4>Exemplo de funcionamento:</h4>
 
-Esse é apenas um arquivo inicial para o README do seu projeto.
-
-É essencial que você preencha esse documento por conta própria, ok?
-
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-
-⚠️ IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
-
--->
+![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/87319747/195233019-aea5b0e9-a77b-4de3-a1ee-7fae12d98a9a.gif)
